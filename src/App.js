@@ -8,9 +8,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import constants from "./constants";
 import Moment from "moment";
+import "../node_modules/uikit/dist/css/uikit.css";
 const { constant } = constants;
 
 class App extends Component {
+  
   componentDidMount() {
     this.elapsedTimeUpdateTimer = setInterval(
       () => this.updateCommentElapsedTime(),

@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addComment } from "./../actions";
+import UIkit from 'uikit';
+
+UIkit.formCustom();
 
 function NewCommentForm(props) {
   let _name = null;
@@ -15,29 +18,37 @@ function NewCommentForm(props) {
   }
 
   return (
-    <div>
-      <form onSubmit={handleNewCommentFormSubmission}>
-        <h2>Create new Comment</h2>
-        <label>Name</label>
-        <input
+    
+    <div className="uk-container">
+      <br/><br/>
+      <form onSubmit={handleNewCommentFormSubmission} >
+        <h2>Create a new comment</h2>
+        <div className="uk-margin">
+        <input className="uk-input uk-form-width-small"
           type="text"
           id="name"
+          placeholder="Name"
           ref={input => {
             _name = input;
           }}
         />
-
-        <label>Comment</label>
-        <textarea
+        </div>
+        <div className="uk-margin">
+        <textarea className="uk-textarea uk-form-width-large" rows="6"
           id="comment"
           type="text"
-          placeholder="write a comment"
+          placeholder="Write a comment"
           ref={textarea => {
             _comment = textarea;
           }}
         />
-        <button type="submit">Send</button>
+        </div>
+        <p uk-margin>
+        <button className="uk-button uk-button-primary" type="submit">Post</button>
+        </p>
       </form>
+      <br/>
+      <hr/>
     </div>
   );
 }

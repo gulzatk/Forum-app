@@ -2,10 +2,14 @@ import React from "react";
 import Comment from "./Comment";
 import PropTypes from "prop-types";
 
+const titleStyle={
+  textAlign: 'center'
+}
 function CommentList(props) {
   return (
     <div>
-      <h2>List of comments</h2>
+      <hr/>
+      <h2 style={titleStyle}>Comments</h2>
       {Object.keys(props.commentList).map(function(commentId) {
         let comments = props.commentList[commentId];
         return (
