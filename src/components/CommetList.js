@@ -10,10 +10,11 @@ function CommentList(props) {
         let comments = props.commentList[commentId];
         return (
           <Comment
+            key={commentId}
+            id={commentId}
             name={comments.name}
             comment={comments.comment}
-            key={commentId}
-            commentId={commentId}
+            formattedAddTime={comments.formattedAddTime}
           />
         );
       })}

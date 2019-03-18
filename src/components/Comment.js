@@ -8,15 +8,17 @@ function Comment(props) {
       <p>
         <em>{props.comment}</em>
       </p>
+      <h4>{props.formattedAddTime}</h4>
       <hr />
     </div>
   );
 }
 
 Comment.propTypes = {
+  id: PropTypes.string,
   name: PropTypes.string,
   comment: PropTypes.string,
-  id: PropTypes.string
+  formattedAddTime: PropTypes.string
 };
 
 export default Comment;
